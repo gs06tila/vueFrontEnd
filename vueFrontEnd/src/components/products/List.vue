@@ -13,19 +13,20 @@
         <hr />
       </div>
     </div>
-    <div v-if="selectedProduct" class="details">
-      <h1>{{ selectedProduct.name }}</h1>
-      <img :src="selectedProduct.thumbnail" :alt="selectedProduct.name" />
-      <p>{{ selectedProduct.shortDescription }}</p>
-      <p>{{ selectedProduct.description }}</p>
-      <p>{{ selectedProduct.price }}</p>
-    </div>
+    <product-details class="details"
+                     v-if="selectedProduct"
+                     :product="selectedProduct"
+    />
   </div>
 </template>
 
 <script>
+import ProductDetails from './Details'
 export default {
   name: 'product-list',
+  components: {
+    ProductDetails: ProductDetails
+  },
   data () {
     return {
       products: [
