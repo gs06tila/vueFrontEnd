@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style scoped>
-
+ .details {
+   padding: 20px;
+ }
 </style>
