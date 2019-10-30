@@ -7,6 +7,7 @@
         <b-collapse is-nav id="nav_collapse">
           <b-navbar-nav>
             <b-nav-item to="/products">Products</b-nav-item>
+            <b-nav-item to="/findus">Find Us</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-container>
@@ -34,7 +35,7 @@ export default {
   }
   .fade-enter-active,
   .fade-leave-active {
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
   }
 
   .fade-enter,
