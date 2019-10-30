@@ -22,5 +22,6 @@ export default new Router({
       name: 'defaultRoute',
       redirect: '/products'
     }
-  ]
+  ],
+  mode: 'history'
 })

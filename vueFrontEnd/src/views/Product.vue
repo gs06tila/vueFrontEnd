@@ -1,5 +1,7 @@
 <template>
-  <product-details :product="product" />
+  <div class="page">
+    <product-details :product="product" />
+  </div>
 </template>
 
 <script>
@@ -14,16 +16,22 @@ export default {
       product: {}
     }
   },
-  mounted () {
-    const slug = this.$route.params.slug
-
-    fetch(`http://192.168.0.15:8080/api/products/${slug}`)
+  beforeRouteEnter (to, from, next) {
+    fetch(`http://192.168.0.15:8080/api/products/${to.params.slug}`)
       .then(response => {
         return response.json()
       })
       .then(product => {
-        this.product = product[0]
+        console.log(product)
+        next(vm => {
+          vm.setData(product)
+        })
       })
+  },
+  methods: {
+    setData (product) {
+      this.product = product[0]
+    }
   }
 }
 </script>

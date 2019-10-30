@@ -1,5 +1,7 @@
 <template>
-  <product-list :products="products"/>
+  <div class="page">
+    <product-list :products="products"/>
+  </div>
 </template>
 
 <script>
@@ -14,14 +16,21 @@ export default {
       products: []
     }
   },
-  mounted () {
+  beforeRouteEnter (to, from, next) {
     fetch(`http://192.168.0.15:8080/api/productses`)
       .then(response => {
         return response.json()
       })
       .then(products => {
-        this.products = products._embedded.productses
+        next(vm => {
+          vm.setData(products)
+        })
       })
+  },
+  methods: {
+    setData (products) {
+      this.products = products._embedded.productses
+    }
   }
 }
 </script>
