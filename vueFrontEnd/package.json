@@ -18,7 +18,9 @@
     "nprogress": "^0.2.0",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue2-leaflet": "^2.2.1"
+    "vue2-leaflet": "^2.2.1",
+    "velocity-animate": "latest",
+    "vue-slider-component": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

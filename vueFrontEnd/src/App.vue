@@ -28,6 +28,7 @@ export default {
   html,
   body {
     height: 100vh;
+    background: linear-gradient(163.7deg, rgba(78, 78, 78, 0) -61.38%, #FFFFFF 70.71%), #FFFFFF;
   }
   div.app,
   div.page {

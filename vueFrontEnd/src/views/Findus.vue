@@ -6,9 +6,9 @@
           <h1 class="mt-4 mb-4 storeInfo">Find Us!</h1>
           <hr>
           <b-media class="find">
-            <b-list-group cols="3" v-for="store in stores"
+            <b-list-group cols="4" v-for="store in stores"
                           :key="store.id">
-              <b-list-group-item @click="view(store)">
+              <b-list-group-item class="colorlist" @click="view(store)">
                 <div class="mb-4" sm="6">
                   <h4 class="mt-2 storeInfo">{{store.name}}</h4>
                   <hr>
@@ -19,7 +19,7 @@
             </b-list-group>
           </b-media>
         </b-col>
-        <b-col cols="8">
+        <b-col cols="7">
           <transition name="bounce">
             <div class="page" v-if="isCurrent">
               <h1 class="mt-4 mb-4 storeInfo">{{storeInfo.city}}</h1>
@@ -73,7 +73,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    fetch(`http://192.168.0.15:8080/api/stores`)
+    fetch(`http://localhost:8080/api/stores`)
       .then(response => {
         return response.json()
       })
@@ -123,6 +123,10 @@ export default {
 
   .find{
     cursor: pointer;
+  }
+  .colorlist{
+    margin-top: 3px;
+    border: 2px solid #eee;
   }
   .bounce-enter-active {
     animation: bounce-in .5s;

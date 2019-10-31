@@ -17,7 +17,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    fetch(`http://192.168.0.15:8080/api/productses`)
+    fetch(`http://localhost:8080/api/productses`)
       .then(response => {
         return response.json()
       })
