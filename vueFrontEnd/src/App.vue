@@ -1,14 +1,46 @@
 <template>
   <div id="app">
-    <router-view/>
+    <b-navbar toggleable="md" type="dark" variant="dark">
+      <b-container>
+        <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
+        <b-navbar-brand to="/">PhoneShop</b-navbar-brand>
+        <b-collapse is-nav id="nav_collapse">
+          <b-navbar-nav>
+            <b-nav-item to="/products">Products</b-nav-item>
+            <b-nav-item to="/findus">Find Us</b-nav-item>
+          </b-navbar-nav>
+        </b-collapse>
+      </b-container>
+    </b-navbar>
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
   </div>
 </template>
 
-<script>
+<script scoped>
 export default {
   name: 'App'
 }
 </script>
 
 <style>
+  html,
+  body {
+    height: 100vh;
+    background: linear-gradient(163.7deg, rgba(78, 78, 78, 0) -61.38%, #FFFFFF 70.71%), #FFFFFF;
+  }
+  div.app,
+  div.page {
+    height: 100% !important;
+  }
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.4s ease-in-out;
+  }
+
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
+  }
 </style>
