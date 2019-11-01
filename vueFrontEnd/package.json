@@ -8,21 +8,22 @@
     "webpack": "webpack --config webpack.config.vendor.js && webpack",
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "node server.js",
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build",
     "lint": "eslint --ext .js,.vue src",
     "build": "node build/build.js"
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.4",
+    "express": "^4.17.1",
     "leaflet": "^1.5.1",
     "nprogress": "^0.2.0",
+    "serve-static": "latest",
+    "velocity-animate": "latest",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
-    "vue2-leaflet": "^2.2.1",
-    "velocity-animate": "latest",
     "vue-slider-component": "latest",
-    "express": "latest",
-    "serve-static": "latest"
+    "vue2-leaflet": "^2.2.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
