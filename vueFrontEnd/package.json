@@ -20,7 +20,9 @@
     "vue-router": "^3.0.1",
     "vue2-leaflet": "^2.2.1",
     "velocity-animate": "latest",
-    "vue-slider-component": "latest"
+    "vue-slider-component": "latest",
+    "express": "latest",
+    "serve-static": "latest"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",

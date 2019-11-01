@@ -73,7 +73,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    fetch(`http://localhost:8080/api/stores`)
+    fetch(`https://task30backend.herokuapp.com/api/stores`)
       .then(response => {
         return response.json()
       })

@@ -17,7 +17,7 @@ export default {
     }
   },
   beforeRouteEnter (to, from, next) {
-    fetch(`http://localhost:8080/api/products/${to.params.slug}`)
+    fetch(`https://task30backend.herokuapp.com/api/products/${to.params.slug}`)
       .then(response => {
         return response.json()
       })
